@@ -7,10 +7,10 @@ class TweenAnimationExample extends StatefulWidget {
   _TweenAnimationExampleState createState() => _TweenAnimationExampleState();
 }
 
-class _TweenAnimationExampleState extends State<TweenAnimationExample> with SingleTickerProviderStateMixin {
+class _TweenAnimationExampleState extends State<TweenAnimationExample>
+    with SingleTickerProviderStateMixin {
   late AnimationController _controller;
 
-  //todo 1
   late Animation<double> animation;
   int _counter = 0;
 
@@ -24,13 +24,20 @@ class _TweenAnimationExampleState extends State<TweenAnimationExample> with Sing
       ),
     );
 
-    //todo 2
-    animation = Tween<double>(begin: 0.0,end: 10).animate(_controller)
-    ..addListener(() {
-      this.setState(() {
-
+    animation = Tween<double>(begin: 0.0, end: 10).animate(_controller)
+      ..addListener(() {
+        this.setState(() {});
+      })
+      ..addStatusListener((status) { //todo 1
+        if (status == AnimationStatus.completed) { //todo 2
+          _controller.reverse(from: 5.0);
+          // _controller.repeat();
+        }else if(status == AnimationStatus.reverse){ //todo 3 (finish)
+          this.setState(() {
+            _counter = _counter - 400;
+          });
+        }
       });
-    });
 
     _controller.addListener(() {
       this.setState(() {
@@ -54,9 +61,9 @@ class _TweenAnimationExampleState extends State<TweenAnimationExample> with Sing
             _controller.isAnimating
                 ? (_counter).toStringAsFixed(2)
                 : "Let's Begin",
-            style: TextStyle(fontSize: 24 * animation.value + 16), // todo 3 (finish)
+            style: TextStyle(fontSize: 24 * animation.value + 16),
           ),
-          onTap: (){
+          onTap: () {
             _controller.forward(from: 0.0);
           },
         ),

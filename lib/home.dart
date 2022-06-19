@@ -1,3 +1,4 @@
+import 'package:animaton_with_flutter/counter_animation.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
@@ -44,12 +45,32 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Text(
-          'Hello World',
-          style: TextStyle(
-            fontSize: 20 * animation.value, //todo 6 (2 how to use controller animation) // finish
+    return SafeArea(
+      child: Scaffold(
+        body: Center(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                'Hello World',
+                style: TextStyle(
+                  fontSize: 20 * animation.value, //todo 6 (2 how to use controller animation) // finish
+                ),
+              ),
+              MaterialButton(
+                color: Theme.of(context).colorScheme.primary,
+                child: Text('Counter Animation'),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => CounterAnimation(),
+                    ),
+                  );
+                },
+              ),
+            ],
           ),
         ),
       ),

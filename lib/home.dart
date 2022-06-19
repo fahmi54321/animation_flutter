@@ -1,4 +1,5 @@
 import 'package:animaton_with_flutter/counter_animation.dart';
+import 'package:animaton_with_flutter/tween_animation.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
@@ -66,6 +67,19 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                     context,
                     MaterialPageRoute(
                       builder: (context) => CounterAnimation(),
+                    ),
+                  );
+                },
+              ),
+
+              MaterialButton(
+                color: Theme.of(context).colorScheme.primary,
+                child: Text('Tween Animation'),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => TweenAnimationExample(),
                     ),
                   );
                 },

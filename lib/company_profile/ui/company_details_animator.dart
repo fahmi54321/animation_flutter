@@ -17,11 +17,10 @@ class _CompanyDetailsAnimatorState extends State<CompanyDetailsAnimator>
     _controller = AnimationController(
         vsync: this,
         duration: Duration(
-          milliseconds: 1780, // todo 1 (kasih duration)
+          milliseconds: 1780,
         ));
 
 
-    //todo 2 (start animation) finish
     _controller.forward();
 
   }

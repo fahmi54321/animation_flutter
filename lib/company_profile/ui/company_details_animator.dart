@@ -1,3 +1,5 @@
+import 'package:animaton_with_flutter/company_profile/repo/repo.dart';
+import 'package:animaton_with_flutter/company_profile/ui/company_details_page.dart';
 import 'package:flutter/material.dart';
 
 class CompanyDetailsAnimator extends StatefulWidget {
@@ -20,9 +22,7 @@ class _CompanyDetailsAnimatorState extends State<CompanyDetailsAnimator>
           milliseconds: 1780,
         ));
 
-
     _controller.forward();
-
   }
 
   @override
@@ -33,6 +33,9 @@ class _CompanyDetailsAnimatorState extends State<CompanyDetailsAnimator>
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return CompanyDetailsPage(
+      company: RepoData.bawp,
+      controller: _controller,
+    ); //todo 2 (finish)
   }
 }

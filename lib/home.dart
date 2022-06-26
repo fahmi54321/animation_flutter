@@ -1,3 +1,5 @@
+import 'package:animaton_with_flutter/company_profile/ui/company_details_animator.dart';
+import 'package:animaton_with_flutter/company_profile/ui/company_details_page.dart';
 import 'package:animaton_with_flutter/counter_animation.dart';
 import 'package:animaton_with_flutter/home_chain_animation.dart';
 import 'package:animaton_with_flutter/tween_animation.dart';
@@ -89,6 +91,19 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                     context,
                     MaterialPageRoute(
                       builder: (context) => HomeChainAnimation(),
+                    ),
+                  );
+                },
+              ),
+
+              MaterialButton(
+                color: Theme.of(context).colorScheme.primary,
+                child: Text('Example project'),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => CompanyDetailsAnimator(),
                     ),
                   );
                 },

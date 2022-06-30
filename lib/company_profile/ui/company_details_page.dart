@@ -1,5 +1,7 @@
 import 'package:animaton_with_flutter/company_profile/anim/company_details_intro_animation.dart';
 import 'package:animaton_with_flutter/company_profile/model/company.dart';
+import 'package:animaton_with_flutter/company_profile/ui/course_card.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'dart:ui' as ui;
 
@@ -55,6 +57,8 @@ class CompanyDetailsPage extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           _createLogoAvatar(),
+          _createAboutCompany(),
+          _createCourseScroller(),
         ],
       ),
     );
@@ -90,6 +94,70 @@ class CompanyDetailsPage extends StatelessWidget {
               ),
             ),
           ],
+        ),
+      ),
+    );
+  }
+
+  Widget _createAboutCompany() {
+    return Padding(
+      padding: EdgeInsets.only(top: 14, left: 14, right: 14),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            company.name,
+            style: TextStyle(
+              color: Colors.white.withOpacity(animation.nameOpacity.value),
+              fontSize: 30 * animation.avatarSize.value + 20,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          Text(
+            company.location,
+            style: TextStyle(
+              color: Colors.white.withOpacity(animation.nameOpacity.value),
+              fontWeight: FontWeight.w500,
+            ),
+          ),
+          Container(
+            color: Colors.white.withOpacity(0.79),
+            margin: EdgeInsets.symmetric(vertical: 14),
+            width: animation.dividerWidth.value,
+            height: 1.0,
+          ),
+          Text(
+            company.about,
+            style: TextStyle(
+              color: Colors.white.withOpacity(animation.aboutOpacity.value),
+              height: 1.4,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _createCourseScroller() {
+    return Padding(
+      padding: EdgeInsets.only(top: 14),
+      child: Transform(
+        transform: Matrix4.translationValues(
+          animation.courseScrollerXTranslation.value,
+          0.0,
+          0.0,
+        ),
+        child: SizedBox.fromSize(
+          size: Size.fromHeight(250),
+          child: ListView.builder(
+            scrollDirection: Axis.horizontal,
+            padding: EdgeInsets.symmetric(horizontal: 7),
+            itemCount: company.courses.length,
+            itemBuilder: (BuildContext context,int index){
+              var course = company.courses[index];
+              return CourseCard(course: course);
+            },
+          ),
         ),
       ),
     );

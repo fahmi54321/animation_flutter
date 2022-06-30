@@ -36,6 +36,6 @@ class _CompanyDetailsAnimatorState extends State<CompanyDetailsAnimator>
     return CompanyDetailsPage(
       company: RepoData.bawp,
       controller: _controller,
-    ); //todo 2 (finish)
+    ); //todo 3 (finish)
   }
 }

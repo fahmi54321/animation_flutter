@@ -18,6 +18,7 @@ import 'package:animaton_with_flutter/home_chain_animation.dart';
 import 'package:animaton_with_flutter/positioned_transition_example.dart';
 import 'package:animaton_with_flutter/rotation_transition_example.dart';
 import 'package:animaton_with_flutter/scale_transition_example.dart';
+import 'package:animaton_with_flutter/size_transition_example.dart';
 import 'package:animaton_with_flutter/tween_animation.dart';
 import 'package:flutter/material.dart';
 
@@ -308,6 +309,18 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                     context,
                     MaterialPageRoute(
                       builder: (context) => const ScaleTransitionExample(),
+                    ),
+                  );
+                },
+              ),
+              MaterialButton(
+                color: Theme.of(context).colorScheme.primary,
+                child: const Text('Size transition'),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const SizeTransitionExample(),
                     ),
                   );
                 },

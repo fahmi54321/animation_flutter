@@ -7,6 +7,7 @@ import 'package:animaton_with_flutter/animated_opacity_example.dart';
 import 'package:animaton_with_flutter/animated_positioned_example.dart';
 import 'package:animaton_with_flutter/animated_size_example.dart';
 import 'package:animaton_with_flutter/animated_text_example.dart';
+import 'package:animaton_with_flutter/animated_widget_example.dart';
 import 'package:animaton_with_flutter/company_profile/ui/company_details_animator.dart';
 import 'package:animaton_with_flutter/company_profile/ui/company_details_page.dart';
 import 'package:animaton_with_flutter/counter_animation.dart';
@@ -218,6 +219,18 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                     context,
                     MaterialPageRoute(
                       builder: (context) => AnimatedSizeExample(),
+                    ),
+                  );
+                },
+              ),
+              MaterialButton(
+                color: Theme.of(context).colorScheme.primary,
+                child: Text('Animated widget'),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => AnimatedWidgetExample(),
                     ),
                   );
                 },

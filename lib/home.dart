@@ -1,4 +1,5 @@
 import 'package:animaton_with_flutter/animated_align_example.dart';
+import 'package:animaton_with_flutter/animated_builder_example.dart';
 import 'package:animaton_with_flutter/company_profile/ui/company_details_animator.dart';
 import 'package:animaton_with_flutter/company_profile/ui/company_details_page.dart';
 import 'package:animaton_with_flutter/counter_animation.dart';
@@ -114,6 +115,18 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                     context,
                     MaterialPageRoute(
                       builder: (context) => AnimatedAlignExample(),
+                    ),
+                  );
+                },
+              ),
+              MaterialButton(
+                color: Theme.of(context).colorScheme.primary,
+                child: Text('Animated builder'),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => AnimatedBuilderExample(),
                     ),
                   );
                 },

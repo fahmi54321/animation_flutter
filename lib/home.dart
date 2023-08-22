@@ -16,6 +16,7 @@ import 'package:animaton_with_flutter/fade_transition_example.dart';
 import 'package:animaton_with_flutter/hero_example.dart';
 import 'package:animaton_with_flutter/home_chain_animation.dart';
 import 'package:animaton_with_flutter/positioned_transition_example.dart';
+import 'package:animaton_with_flutter/rotation_transition_example.dart';
 import 'package:animaton_with_flutter/tween_animation.dart';
 import 'package:flutter/material.dart';
 
@@ -282,6 +283,18 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                     context,
                     MaterialPageRoute(
                       builder: (context) => const PositionedTransitionExample(),
+                    ),
+                  );
+                },
+              ),
+              MaterialButton(
+                color: Theme.of(context).colorScheme.primary,
+                child: const Text('Rotation transition'),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const RotationTransitionExample(),
                     ),
                   );
                 },

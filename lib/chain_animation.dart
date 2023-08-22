@@ -25,10 +25,9 @@ class ChainAnimation extends AnimatedWidget {
             margin: EdgeInsets.symmetric(vertical: 10),
             height: _sizeTween.evaluate(animation),
             width: _sizeTween.evaluate(animation),
-            child: FlatButton(
+            child: ElevatedButton(
               onPressed: () {},
               child: Text('Button'),
-              color: Theme.of(context).colorScheme.primary,
             ),
           ),
         ),

@@ -4,6 +4,7 @@ import 'package:animaton_with_flutter/animated_container_example.dart';
 import 'package:animaton_with_flutter/animated_cross_faded_example.dart';
 import 'package:animaton_with_flutter/animated_list_example.dart';
 import 'package:animaton_with_flutter/animated_opacity_example.dart';
+import 'package:animaton_with_flutter/animated_positioned_example.dart';
 import 'package:animaton_with_flutter/animated_text_example.dart';
 import 'package:animaton_with_flutter/company_profile/ui/company_details_animator.dart';
 import 'package:animaton_with_flutter/company_profile/ui/company_details_page.dart';
@@ -192,6 +193,18 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                     context,
                     MaterialPageRoute(
                       builder: (context) => LogoFade(),
+                    ),
+                  );
+                },
+              ),
+              MaterialButton(
+                color: Theme.of(context).colorScheme.primary,
+                child: Text('Animated positioned'),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => AnimatedPositionedExample(),
                     ),
                   );
                 },

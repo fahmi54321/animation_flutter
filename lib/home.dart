@@ -1,6 +1,7 @@
 import 'package:animaton_with_flutter/animated_align_example.dart';
 import 'package:animaton_with_flutter/animated_builder_example.dart';
 import 'package:animaton_with_flutter/animated_container_example.dart';
+import 'package:animaton_with_flutter/animated_cross_faded_example.dart';
 import 'package:animaton_with_flutter/company_profile/ui/company_details_animator.dart';
 import 'package:animaton_with_flutter/company_profile/ui/company_details_page.dart';
 import 'package:animaton_with_flutter/counter_animation.dart';
@@ -140,6 +141,18 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                     context,
                     MaterialPageRoute(
                       builder: (context) => AnimatedContainerExample(),
+                    ),
+                  );
+                },
+              ),
+              MaterialButton(
+                color: Theme.of(context).colorScheme.primary,
+                child: Text('Animated cross fade'),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => AnimatedCrossFadeExample(),
                     ),
                   );
                 },

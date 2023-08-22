@@ -12,6 +12,7 @@ import 'package:animaton_with_flutter/company_profile/ui/company_details_animato
 import 'package:animaton_with_flutter/company_profile/ui/company_details_page.dart';
 import 'package:animaton_with_flutter/counter_animation.dart';
 import 'package:animaton_with_flutter/decorated_box_transition_example.dart';
+import 'package:animaton_with_flutter/fade_transition_example.dart';
 import 'package:animaton_with_flutter/home_chain_animation.dart';
 import 'package:animaton_with_flutter/tween_animation.dart';
 import 'package:flutter/material.dart';
@@ -247,6 +248,18 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                       MaterialPageRoute(
                         builder: (context) =>
                             DecoratedBoxTransitionExampleApp(),
+                      ),
+                    );
+                  },
+                ),
+                MaterialButton(
+                  color: Theme.of(context).colorScheme.primary,
+                  child: Text('Fade transition'),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => FadeTransitionExampleApp(),
                       ),
                     );
                   },
